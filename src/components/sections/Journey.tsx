@@ -1,10 +1,10 @@
-
 "use client";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import ShaderBackground from "@/components/ui/shader-background";
 
 const researchInterests = [
   "Deep Learning",
@@ -29,20 +29,24 @@ export function Journey() {
   const bgImage = PlaceHolderImages.find(img => img.id === "journey-bg");
 
   return (
-    <section id="about" className="relative min-h-screen py-32 overflow-hidden flex items-center">
-      {/* Background with Overlay */}
+    <section id="about" className="relative min-h-screen py-32 overflow-hidden flex items-center bg-black">
+      {/* Background Layers */}
       <div className="absolute inset-0 z-0">
+        {/* Original Cinematic Image */}
         <Image 
           src={bgImage?.imageUrl || ""} 
           alt={bgImage?.description || "Journey Background"} 
           fill 
-          className="object-cover opacity-60"
+          className="object-cover opacity-40 grayscale"
           data-ai-hint={bgImage?.imageHint}
           priority
         />
-        {/* Gradient Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/30 to-black" />
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" />
+        {/* Interactive Shader Overlay */}
+        <ShaderBackground />
+        
+        {/* Gradient Overlays for Depth and Readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/20 to-black" />
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
       </div>
 
       <div className="container relative z-10 px-6">
