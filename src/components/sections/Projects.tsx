@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import CyberneticGridShader from "@/components/ui/cybernetic-grid-shader";
 
 const projects = [
   {
@@ -36,8 +37,14 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24">
-      <div className="container px-4">
+    <section id="projects" className="relative py-24 overflow-hidden">
+      {/* Dynamic Cybernetic Background */}
+      <div className="absolute inset-0 z-0">
+        <CyberneticGridShader />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
+      </div>
+
+      <div className="container relative z-10 px-4">
         <h2 className="text-3xl font-bold mb-12 font-headline text-center">Featured Projects</h2>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
