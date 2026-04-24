@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -35,7 +34,7 @@ export function Navbar() {
     >
       <div className="container px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center">
-          <span className="font-bold text-xl tracking-tighter">SC</span>
+          <span className="font-bold text-xl tracking-tighter text-white">SC</span>
         </Link>
 
         {/* Desktop Nav - Centered Links */}
@@ -51,12 +50,8 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Action Button */}
-        <div className="hidden lg:block">
-          <Button variant="outline" size="sm" className="rounded-md border-white/20 bg-transparent text-xs hover:bg-white hover:text-black transition-all px-6" asChild>
-            <Link href="/resume.pdf">Resume</Link>
-          </Button>
-        </div>
+        {/* Spacer for layout consistency since button was removed */}
+        <div className="hidden lg:block w-[40px]" />
 
         {/* Mobile Toggle */}
         <button 
@@ -89,9 +84,6 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button className="w-full max-w-xs rounded-md" size="lg" onClick={() => setMobileMenuOpen(false)} asChild>
-            <Link href="/resume.pdf">Resume</Link>
-          </Button>
         </div>
       </div>
     </nav>

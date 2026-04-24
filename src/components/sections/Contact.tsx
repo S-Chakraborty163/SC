@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, Linkedin, Github, Download, Send, ExternalLink } from "lucide-react";
+import { Mail, Linkedin, Github, Send, ExternalLink } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
@@ -68,13 +68,6 @@ export function Contact() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-
-            <div className="pt-6">
-              <Button size="lg" className="w-full rounded-full bg-secondary hover:bg-secondary/90 text-white font-bold group">
-                <Download className="mr-2 w-5 h-5 group-hover:-translate-y-1 transition-transform" />
-                Download Resume (PDF)
-              </Button>
             </div>
           </div>
 
