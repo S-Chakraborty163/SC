@@ -4,15 +4,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Terminal, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
-  { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
-  { name: "Learnings", href: "#learnings" },
+  { name: "Learning", href: "#learnings" },
   { name: "Hobbies", href: "#hobbies" },
   { name: "Contact", href: "#contact" },
 ];
@@ -33,33 +31,31 @@ export function Navbar() {
     <nav 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-background/80 backdrop-blur-lg border-b border-white/5 py-3 shadow-lg" : "bg-transparent py-5"
+        scrolled ? "bg-black/60 backdrop-blur-lg py-4" : "bg-transparent py-6"
       )}
     >
-      <div className="container px-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-primary-foreground group-hover:rotate-12 transition-transform shadow-lg shadow-primary/20">
-            <Terminal className="w-6 h-6" />
-          </div>
-          <span className="font-headline font-bold text-xl tracking-tight">
-            Soumyajit<span className="text-primary">.</span>Byte
-          </span>
+      <div className="container px-6 flex items-center justify-between">
+        <Link href="/" className="flex items-center">
+          <span className="font-bold text-xl tracking-tighter">SC</span>
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        {/* Desktop Nav - Centered Links */}
+        <div className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+              className="text-[13px] font-medium text-muted-foreground hover:text-white transition-colors uppercase tracking-widest"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </Link>
           ))}
-          <Button variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
-            <Link href="#contact">Hire Me</Link>
+        </div>
+
+        {/* Action Button */}
+        <div className="hidden lg:block">
+          <Button variant="outline" size="sm" className="rounded-md border-white/20 bg-transparent text-xs hover:bg-white hover:text-black transition-all px-6" asChild>
+            <Link href="/resume.pdf">Resume</Link>
           </Button>
         </div>
 
@@ -74,22 +70,28 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <div className={cn(
-        "lg:hidden fixed inset-0 top-[72px] bg-background/95 backdrop-blur-xl z-40 transition-transform duration-300 ease-in-out",
+        "lg:hidden fixed inset-0 top-0 bg-background/95 backdrop-blur-xl z-40 transition-transform duration-300 ease-in-out h-screen",
         mobileMenuOpen ? "translate-x-0" : "translate-x-full"
       )}>
         <div className="flex flex-col items-center justify-center h-full gap-8 p-4">
+          <button 
+            className="absolute top-6 right-6 p-2"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <X size={32} />
+          </button>
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-2xl font-headline font-semibold text-foreground hover:text-primary"
+              className="text-2xl font-semibold text-foreground hover:text-primary"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
             </Link>
           ))}
-          <Button className="w-full max-w-xs rounded-full" size="lg" onClick={() => setMobileMenuOpen(false)} asChild>
-            <Link href="#contact">Hire Me</Link>
+          <Button className="w-full max-w-xs rounded-md" size="lg" onClick={() => setMobileMenuOpen(false)} asChild>
+            <Link href="/resume.pdf">Resume</Link>
           </Button>
         </div>
       </div>

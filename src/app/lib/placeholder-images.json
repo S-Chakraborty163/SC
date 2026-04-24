@@ -3,9 +3,9 @@
   "placeholderImages": [
     {
       "id": "hero-bg",
-      "description": "Abstract dark digital background",
-      "imageUrl": "https://picsum.photos/seed/bytefolio-bg/1920/1080",
-      "imageHint": "abstract dark technology"
+      "description": "Abstract dark liquid marble texture",
+      "imageUrl": "https://picsum.photos/seed/liquid-dark/1920/1080",
+      "imageHint": "dark liquid marble abstract"
     },
     {
       "id": "project-ecommerce",
