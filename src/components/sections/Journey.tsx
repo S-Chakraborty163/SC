@@ -2,8 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import MountainVistaParallax from "@/components/ui/mountain-vista-bg";
 import ShaderBackground from "@/components/ui/shader-background";
 
 const researchInterests = [
@@ -26,27 +25,19 @@ const skills = [
 ];
 
 export function Journey() {
-  const bgImage = PlaceHolderImages.find(img => img.id === "journey-bg");
-
   return (
     <section id="about" className="relative min-h-screen py-32 overflow-hidden flex items-center bg-black">
       {/* Background Layers */}
       <div className="absolute inset-0 z-0">
-        {/* Original Cinematic Image */}
-        <Image 
-          src={bgImage?.imageUrl || ""} 
-          alt={bgImage?.description || "Journey Background"} 
-          fill 
-          className="object-cover opacity-40 grayscale"
-          data-ai-hint={bgImage?.imageHint}
-          priority
-        />
-        {/* Interactive Shader Overlay */}
+        {/* Cinematic Parallax Background */}
+        <MountainVistaParallax />
+        
+        {/* Interactive Shader Overlay for Tech Feel */}
         <ShaderBackground />
         
         {/* Gradient Overlays for Depth and Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/20 to-black" />
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black" />
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[0.5px]" />
       </div>
 
       <div className="container relative z-10 px-6">
