@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -10,7 +11,6 @@ const navLinks = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Learning", href: "#learnings" },
-  { name: "Hobbies", href: "#hobbies" },
   { name: "Contact", href: "#contact" },
 ];
 

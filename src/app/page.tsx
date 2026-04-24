@@ -4,7 +4,6 @@ import { Hero } from "@/components/sections/Hero";
 import { Journey } from "@/components/sections/Journey";
 import { Projects } from "@/components/sections/Projects";
 import { Learnings } from "@/components/sections/Learnings";
-import { Hobbies } from "@/components/sections/Hobbies";
 import { Contact } from "@/components/sections/Contact";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -16,7 +15,6 @@ export default function Home() {
       <Journey />
       <Projects />
       <Learnings />
-      <Hobbies />
       <Contact />
       
       <footer className="py-12 border-t border-white/5 bg-background">

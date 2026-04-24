@@ -1,9 +1,11 @@
+
 "use client";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import MountainVistaParallax from "@/components/ui/mountain-vista-bg";
 import ShaderBackground from "@/components/ui/shader-background";
+import { Mountain, Camera, Trophy } from "lucide-react";
 
 const researchInterests = [
   "Deep Learning",
@@ -11,6 +13,12 @@ const researchInterests = [
   "Computer Vision",
   "E-commerce Analytics",
   "Healthcare Analytics",
+];
+
+const hobbies = [
+  { name: "Himalayan Trekking", icon: Mountain },
+  { name: "Nature Photography", icon: Camera },
+  { name: "Football Player", icon: Trophy },
 ];
 
 const skills = [
@@ -29,13 +37,8 @@ export function Journey() {
     <section id="about" className="relative min-h-screen py-32 overflow-hidden flex items-center bg-black">
       {/* Background Layers */}
       <div className="absolute inset-0 z-0">
-        {/* Cinematic Parallax Background */}
         <MountainVistaParallax />
-        
-        {/* Interactive Shader Overlay for Tech Feel */}
         <ShaderBackground />
-        
-        {/* Gradient Overlays for Depth and Readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black" />
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[0.5px]" />
       </div>
@@ -55,7 +58,10 @@ export function Journey() {
                   I started in mechanical engineering, but somewhere between systems thinking and discovering transformers, I realised I was more interested in how machines learn than how they move.
                 </p>
                 <p>
-                  Since then, I&apos;ve been exploring deep learning, building things that sometimes work, often break, and always teach me something. Still figuring things out, still asking questions—just slightly better ones each time.
+                  Since then, I&apos;ve been exploring deep learning, building things that sometimes work, often break, and always teach me something. Still figuring things out, still asking questions.
+                </p>
+                <p className="text-primary/90 font-medium">
+                  When I&apos;m not looking at a screen, I love to go trekking in the Himalayas and also in my free time, I love to click the moments of nature. I am a football player too.
                 </p>
               </div>
             </div>
@@ -71,6 +77,18 @@ export function Journey() {
                   >
                     {interest}
                   </Badge>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <h2 className="text-xs font-bold tracking-[0.4em] text-white/50 uppercase">Passions</h2>
+              <div className="flex flex-wrap gap-4">
+                {hobbies.map((hobby) => (
+                  <div key={hobby.name} className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md">
+                    <hobby.icon className="w-4 h-4 text-primary" />
+                    <span className="text-sm font-medium text-white/80">{hobby.name}</span>
+                  </div>
                 ))}
               </div>
             </div>
