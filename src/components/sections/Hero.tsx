@@ -1,24 +1,22 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { SmokeBackground } from "@/components/ui/spooky-smoke-animation";
 
 export function Hero() {
-  const bgImage = PlaceHolderImages.find(img => img.id === "hero-bg")?.imageUrl;
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with overlay matching the reference */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40 grayscale contrast-125"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      />
-      <div className="absolute inset-0 z-1 bg-gradient-to-b from-black/80 via-black/40 to-black" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Dynamic Smoke Background */}
+      <div className="absolute inset-0 z-0">
+        <SmokeBackground smokeColor="#7c3aed" className="opacity-60" />
+      </div>
+      
+      {/* Gradient Overlay for Depth */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-b from-black/80 via-transparent to-black" />
 
       <div className="container relative z-10 px-4 text-center max-w-4xl">
-        <p className="text-xs font-bold tracking-[0.3em] text-muted-foreground uppercase mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <p className="text-xs font-bold tracking-[0.3em] text-primary uppercase mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
           Hello There
         </p>
         
