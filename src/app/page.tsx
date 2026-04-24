@@ -1,9 +1,7 @@
 
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { About } from "@/components/sections/About";
-import { Skills } from "@/components/sections/Skills";
-import { Experience } from "@/components/sections/Experience";
+import { Journey } from "@/components/sections/Journey";
 import { Projects } from "@/components/sections/Projects";
 import { Learnings } from "@/components/sections/Learnings";
 import { Hobbies } from "@/components/sections/Hobbies";
@@ -15,9 +13,7 @@ export default function Home() {
     <main className="min-h-screen selection:bg-primary selection:text-primary-foreground">
       <Navbar />
       <Hero />
-      <About />
-      <Skills />
-      <Experience />
+      <Journey />
       <Projects />
       <Learnings />
       <Hobbies />

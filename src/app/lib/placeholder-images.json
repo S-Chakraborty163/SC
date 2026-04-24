@@ -8,6 +8,12 @@
       "imageHint": "dark liquid marble abstract"
     },
     {
+      "id": "journey-bg",
+      "description": "Atmospheric sunset clouds with orange and purple hues",
+      "imageUrl": "https://picsum.photos/seed/sunset-clouds/1920/1200",
+      "imageHint": "sunset clouds atmospheric"
+    },
+    {
       "id": "project-ecommerce",
       "description": "E-commerce data analysis dashboard",
       "imageUrl": "https://picsum.photos/seed/project1/800/600",
