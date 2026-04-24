@@ -1,28 +1,27 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 227 15% 13%;
+    --background: 227 15% 9%;
     --foreground: 210 20% 98%;
-    --card: 227 15% 16%;
+    --card: 227 15% 12%;
     --card-foreground: 210 20% 98%;
-    --popover: 227 15% 13%;
+    --popover: 227 15% 9%;
     --popover-foreground: 210 20% 98%;
     --primary: 227 82% 70%;
-    --primary-foreground: 227 15% 13%;
+    --primary-foreground: 227 15% 9%;
     --secondary: 270 100% 68%;
     --secondary-foreground: 210 20% 98%;
-    --muted: 227 15% 20%;
+    --muted: 227 15% 15%;
     --muted-foreground: 215 20% 65%;
     --accent: 270 100% 68%;
     --accent-foreground: 210 20% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 20% 98%;
-    --border: 227 15% 22%;
-    --input: 227 15% 22%;
+    --border: 227 15% 18%;
+    --input: 227 15% 18%;
     --ring: 227 82% 70%;
     --radius: 0.75rem;
   }
@@ -36,6 +35,33 @@
     @apply bg-background text-foreground selection:bg-primary/30;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+/* Custom Orbital Animations */
+@keyframes orbital-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes orbital-ping {
+  75%, 100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.animate-orbital-pulse {
+  animation: orbital-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-orbital-ping {
+  animation: orbital-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .glass-card {
