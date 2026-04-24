@@ -1,0 +1,47 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-bg",
+      "description": "Abstract dark digital background",
+      "imageUrl": "https://picsum.photos/seed/bytefolio-bg/1920/1080",
+      "imageHint": "abstract dark technology"
+    },
+    {
+      "id": "project-ecommerce",
+      "description": "E-commerce data analysis dashboard",
+      "imageUrl": "https://picsum.photos/seed/project1/800/600",
+      "imageHint": "ecommerce analytics"
+    },
+    {
+      "id": "project-cv",
+      "description": "Computer vision object detection demo",
+      "imageUrl": "https://picsum.photos/seed/project2/800/600",
+      "imageHint": "computer vision"
+    },
+    {
+      "id": "project-nlp",
+      "description": "Natural language processing visualization",
+      "imageUrl": "https://picsum.photos/seed/project3/800/600",
+      "imageHint": "nlp transformers"
+    },
+    {
+      "id": "hobby-football",
+      "description": "Soumyajit playing football",
+      "imageUrl": "https://picsum.photos/seed/football/800/1000",
+      "imageHint": "football match"
+    },
+    {
+      "id": "hobby-photography",
+      "description": "Campus photography showcase",
+      "imageUrl": "https://picsum.photos/seed/photo/800/1000",
+      "imageHint": "landscape photography"
+    },
+    {
+      "id": "hobby-trekking",
+      "description": "Trekking in the mountains",
+      "imageUrl": "https://picsum.photos/seed/trek/800/1000",
+      "imageHint": "mountain trekking"
+    }
+  ]
+}
