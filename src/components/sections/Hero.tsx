@@ -6,7 +6,7 @@ import { SmokeBackground } from "@/components/ui/spooky-smoke-animation";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative h-screen w-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Dynamic Smoke Background */}
       <div className="absolute inset-0 z-0">
         <SmokeBackground smokeColor="#7c3aed" className="opacity-60" />
