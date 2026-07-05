@@ -1,0 +1,31 @@
+"use client";
+
+interface DottedSurfaceProps {
+  className?: string;
+}
+
+export function DottedSurface({ className = "" }: DottedSurfaceProps) {
+  return (
+    <svg
+      className={className}
+      width="100%"
+      height="100%"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+    >
+      <defs>
+        <pattern
+          id="dots"
+          x="0"
+          y="0"
+          width="20"
+          height="20"
+          patternUnits="userSpaceOnUse"
+        >
+          <circle cx="10" cy="10" r="1" fill="rgba(255, 255, 255, 0.1)" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dots)" />
+    </svg>
+  );
+}
