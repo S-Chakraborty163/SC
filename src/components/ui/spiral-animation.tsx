@@ -19,7 +19,7 @@ class Vector3D {
 
 // Animation controller
 class AnimationController {
-  private timeline: gsap.core.Timeline;
+  private timeline: ReturnType<typeof gsap.timeline>;
   private time = 0;
   private ctx: CanvasRenderingContext2D;
   private size: number;
