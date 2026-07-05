@@ -114,7 +114,6 @@ export function AetherFlowBackground({ className, ...props }: React.ComponentPro
       color: 0x8b5cf6,
       transparent: true,
       opacity: 0.3,
-      wireframe: false,
     });
     const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
     scene.add(lines);
