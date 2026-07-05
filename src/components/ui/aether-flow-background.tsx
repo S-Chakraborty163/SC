@@ -41,6 +41,8 @@ export function AetherFlowBackground({ className, ...props }: React.ComponentPro
     cameraRef.current = camera;
 
     // Renderer setup
+    if (!canvasRef.current) return;
+
     const renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.current,
       antialias: true,
