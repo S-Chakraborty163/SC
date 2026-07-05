@@ -168,9 +168,11 @@ export function AetherFlowBackground({ className, ...props }: React.ComponentPro
 
         // Boundary
         const boundary = 50;
-        ["x", "y", "z"].forEach((axis: any) => {
-          if (Math.abs(node.position[axis]) > boundary) {
-            node.position[axis] = Math.sign(node.position[axis]) * boundary;
+        const axes = ["x", "y", "z"] as const;
+        axes.forEach((axis) => {
+          const posValue = node.position[axis];
+          if (Math.abs(posValue) > boundary) {
+            node.position[axis] = Math.sign(posValue) * boundary;
             node.velocity[axis] *= -0.5;
           }
         });
